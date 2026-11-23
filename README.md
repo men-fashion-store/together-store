@@ -17,14 +17,14 @@
 1. فعّل Email/Password في Firebase Authentication.
 2. أنشئ حساب الإدارة بالبريد المحدد في `index.html`، ثم أكمل تحقق البريد الإلكتروني.
 3. انشر محتوى `database.rules.json` من صفحة Realtime Database → Rules.
-4. إعداد Firebase App Check مطلوب قبل استقبال الطلبات: سجّل تطبيق الويب عبر reCAPTCHA v3، ضع **Site Key فقط** في `APP_CHECK_SITE_KEY` داخل `index.html`، واترك Secret Key داخل إعداد Firebase فقط. راقب الطلبات وتأكد من نجاحها قبل تفعيل enforcement.
+4. App Check مسجل باستخدام reCAPTCHA Enterprise؛ المفتاح العلني موجود في `APP_CHECK_SITE_KEY` داخل `index.html`. لا تضع أي Secret Key في المستودع. بعد نشر الموقع واختبار طلب، راقب App Check ثم فعّل enforcement لقاعدة البيانات.
 5. Storage اختياري لرفع الصور. عند تفعيله، انشر `storage.rules` من صفحة Storage → Rules.
 
-لا تستخدم Test mode ولا تضع أي Secret Key أو كلمة مرور في هذا المستودع. إعداد App Check غير مكتمل حاليًا، لذلك إرسال الطلبات متوقف في واجهة الموقع حتى إضافة Site Key.
+لا تستخدم Test mode ولا تضع أي Secret Key أو كلمة مرور في هذا المستودع. إعداد App Check مسجل، لكن قواعد Realtime Database وenforcement واختبار الطلب الحقيقي ما زالت خطوات نشر لازمة قبل استقبال العملاء.
 
 ## النشر على GitHub Pages
 
-من إعدادات المستودع اختر **Pages → Deploy from a branch → main → /(root)**. بعد نشره، أضف نطاق `men-fashion-store.github.io` إلى Authorized domains في Firebase Authentication وإلى نطاقات reCAPTCHA.
+من إعدادات المستودع اختر **Pages → Deploy from a branch → main → /(root)**. رابط الموقع المتوقع `https://men-fashion-store.github.io/together-store/`. أضف نطاق `men-fashion-store.github.io` إلى Authorized domains في Firebase Authentication؛ وهو مضاف كذلك إلى مفتاح reCAPTCHA.
 
 ## حدود التشغيل الحالية
 

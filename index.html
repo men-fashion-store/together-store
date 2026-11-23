@@ -82,8 +82,8 @@ label em{color:#c0262d;font-style:normal;font-size:12px;display:block;min-height
 <script>
 const FIREBASE_CONFIG={apiKey:"AIzaSyAnz5eg_i_nvrQr128ms_PlYldEFdIrIUY",authDomain:"wahaj-21a9d.firebaseapp.com",databaseURL:"https://wahaj-21a9d-default-rtdb.firebaseio.com",projectId:"wahaj-21a9d",storageBucket:"wahaj-21a9d.firebasestorage.app",messagingSenderId:"820263571886",appId:"1:820263571886:web:2af268a7acbdba7b75f83f",measurementId:"G-CXZZ0N8598"},ADMIN_EMAIL="motaz@gmail.com";
 firebase.initializeApp(FIREBASE_CONFIG);
-const APP_CHECK_SITE_KEY="";
-if(APP_CHECK_SITE_KEY)firebase.appCheck().activate(new firebase.appCheck.ReCaptchaV3Provider(APP_CHECK_SITE_KEY),true);
+const APP_CHECK_SITE_KEY="6LcQBC4uAAAAAEbxjkboVHQg6LyS45aRdRcAc_cv";
+if(APP_CHECK_SITE_KEY)firebase.appCheck().activate(new firebase.appCheck.ReCaptchaEnterpriseProvider(APP_CHECK_SITE_KEY),true);
 const FB_DB=firebase.database(),FB_AUTH=firebase.auth(),FB_STORAGE=firebase.storage();
 const DEF={s:{name:"Together",logo:"",ship:60,free:1500,c1:"#9B1D5A",c2:"#2B1220",c3:"#FFF8F8",c4:"#FFC93C",c5:"#FBE3EC",fontScale:1,seasonOn:0,seasonTitle:"",seasonText:"",seasonImg:"",seasonColor:"#FBE3EC",coupons:"TOGETHER10:10:300"},
 cats:[{id:"skin",n:"العناية بالبشرة"},{id:"hair",n:"العناية بالشعر"},{id:"body",n:"العناية بالجسم"},{id:"pack",n:"الباكدجات"},{id:"more",n:"منتجات أخرى قد تهمك"}],
