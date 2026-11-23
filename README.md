@@ -15,7 +15,7 @@
 المشروع يستخدم Firebase Web SDK من CDN وبيانات المشروع المضمّنة في `index.html`.
 
 1. فعّل Email/Password في Firebase Authentication.
-2. أنشئ حساب الإدارة بالبريد المحدد في `index.html`، ثم أكمل تحقق البريد الإلكتروني.
+2. استخدم حساب الإدارة المعتمد في Firebase Authentication وأكمل تحقق البريد الإلكتروني. لوحة الموقع والقواعد تقيد الإدارة بواسطة UID، وليس بمجرد معرفة البريد.
 3. انشر محتوى `database.rules.json` من صفحة Realtime Database → Rules.
 4. App Check مسجل باستخدام reCAPTCHA Enterprise؛ المفتاح العلني موجود في `APP_CHECK_SITE_KEY` داخل `index.html`. لا تضع أي Secret Key في المستودع. بعد نشر الموقع واختبار طلب، راقب App Check ثم فعّل enforcement لقاعدة البيانات.
 5. Storage اختياري لرفع الصور. عند تفعيله، انشر `storage.rules` من صفحة Storage → Rules.
