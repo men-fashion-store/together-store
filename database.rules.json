@@ -10,7 +10,7 @@
       ".indexOn": ["createdAt"],
       "$orderId": {
         ".write": "(auth != null && auth.uid == '92pqFPTnbMMHfs5Zxbdz4nPnCRi1' && auth.token.email_verified == true) || (!data.exists() && newData.child('status').val() == 'new' && newData.child('paymentMethod').val() == 'cash_on_delivery')",
-        ".validate": "newData.hasChildren(['no', 'createdAt', 'status', 'paymentMethod', 'customer', 'items', 'subtotal', 'discount', 'shipping', 'total', 'notes']) && newData.child('no').isString() && newData.child('no').val().length <= 32 && newData.child('createdAt').isNumber() && newData.child('status').isString() && ['new', 'review', 'contacted', 'confirmed', 'preparing', 'shipped', 'delivered', 'cancelled'].contains(newData.child('status').val()) && newData.child('paymentMethod').val() == 'cash_on_delivery' && newData.child('subtotal').isNumber() && newData.child('discount').isNumber() && newData.child('shipping').isNumber() && newData.child('total').isNumber() && newData.child('notes').isString()",
+        ".validate": "newData.hasChildren(['no', 'createdAt', 'status', 'paymentMethod', 'customer', 'items', 'subtotal', 'discount', 'shipping', 'total', 'notes']) && newData.child('no').isString() && newData.child('no').val().length <= 32 && newData.child('createdAt').isNumber() && newData.child('status').isString() && newData.child('status').val().matches(/^(new|review|contacted|confirmed|preparing|shipped|delivered|cancelled)$/) && newData.child('paymentMethod').val() == 'cash_on_delivery' && newData.child('subtotal').isNumber() && newData.child('discount').isNumber() && newData.child('shipping').isNumber() && newData.child('total').isNumber() && newData.child('notes').isString()",
         "customer": {
           ".validate": "newData.hasChildren(['name', 'phone', 'phone2', 'governorate', 'city', 'street', 'address'])",
           "name": { ".validate": "newData.isString() && newData.val().length >= 5 && newData.val().length <= 120" },
@@ -24,7 +24,7 @@
           "$other": { ".validate": false }
         },
         "items": {
-          ".validate": "newData.hasChildren() && newData.numChildren() <= 30",
+          ".validate": "newData.hasChildren()",
           "$itemId": {
             ".validate": "newData.hasChildren(['id', 'name', 'quantity', 'unitPrice', 'total']) && newData.child('id').isNumber() && newData.child('name').isString() && newData.child('name').val().length <= 160 && newData.child('quantity').isNumber() && newData.child('quantity').val() > 0 && newData.child('quantity').val() <= 99 && newData.child('unitPrice').isNumber() && newData.child('unitPrice').val() >= 0 && newData.child('total').isNumber() && newData.child('total').val() >= 0",
             "$other": { ".validate": false }
